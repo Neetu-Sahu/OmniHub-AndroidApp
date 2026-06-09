@@ -22,7 +22,7 @@ import org.w3c.dom.Text;
 
 public class Eight extends AppCompatActivity {
     EditText e9,e10,e11,e12;
-    Button b18,b17;
+    Button b18,b17,b32;
     TextView t5;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -39,6 +39,7 @@ public class Eight extends AppCompatActivity {
         t5=(TextView)findViewById(R.id.textView5);
         b17=(Button) findViewById(R.id.button17);
         b18=(Button) findViewById(R.id.button18);
+        b32=(Button) findViewById(R.id.button32);
         firebaseDatabase=FirebaseDatabase.getInstance();
         b17.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +67,14 @@ public class Eight extends AppCompatActivity {
                     databaseReference.child(s4).setValue(users);
                     Toast.makeText(Eight.this, "Realtime Database updated", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        b32.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent w=new Intent(Eight.this,Ninth.class);
+                startActivity(w);
+                finish();
             }
         });
     }
