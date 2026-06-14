@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Tenth extends AppCompatActivity {
-    Button b20,b21,b22,b43;
+    Button b20,b21,b22,b43,b45,b46,b47;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,6 +25,9 @@ public class Tenth extends AppCompatActivity {
         b21=(Button) findViewById(R.id.button21);
         b22=(Button) findViewById(R.id.button22);
         b43=(Button) findViewById(R.id.button43);
+        b45=(Button) findViewById(R.id.button45);
+        b46=(Button) findViewById(R.id.button46);
+        b47=(Button) findViewById(R.id.button47);
         b20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +57,30 @@ public class Tenth extends AppCompatActivity {
             public void onClick(View v) {
                 Intent y=new Intent(Tenth.this, Ninth.class);
                 startActivity(y);
+                finish();
+            }
+        });
+        b45.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Tenth.this, Twentieth.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        b46.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Tenth.this, TwentyFirst.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        b47.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Tenth.this, TwentySecond.class);
+                startActivity(i);
                 finish();
             }
         });
