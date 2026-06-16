@@ -19,7 +19,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Seventh extends AppCompatActivity {
     EditText e7,e8;
-    TextView t4;
     Button b15,b16;
 
     @Override
@@ -27,7 +26,6 @@ public class Seventh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_seventh);
-        t4=(TextView)findViewById(R.id.textView4);
         e7=(EditText) findViewById(R.id.editTextText7);
         e8=(EditText) findViewById(R.id.editTextText8);
         e8.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
