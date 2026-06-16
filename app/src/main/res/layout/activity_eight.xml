@@ -1,81 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".Eight">
+    android:background="@color/splash_bg"
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/editTextText9"
+    <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".Eight">
 
-    <EditText
-        android:id="@+id/editTextText10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="Real-Time Database Entry"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold|italic" />
 
-    <EditText
-        android:id="@+id/editTextText11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint="Phone"
-        android:inputType="phone"
-        android:minHeight="48dp" />
+        <EditText
+            android:id="@+id/editTextText9"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/custom_progress_bar"
+            android:backgroundTint="#1AFFFFFF"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary" />
 
-    <EditText
-        android:id="@+id/editTextText12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="Address"
-        android:inputType="textPostalAddress"
-        android:minHeight="48dp" />
+        <EditText
+            android:id="@+id/editTextText10"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/custom_progress_bar"
+            android:backgroundTint="#1AFFFFFF"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary" />
 
-    <Button
-        android:id="@+id/button18"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:text="Submit" />
+        <EditText
+            android:id="@+id/editTextText11"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/custom_progress_bar"
+            android:backgroundTint="#1AFFFFFF"
+            android:ems="10"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="realtime database" />
+        <EditText
+            android:id="@+id/editTextText12"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/custom_progress_bar"
+            android:backgroundTint="#1AFFFFFF"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary" />
 
-    <Button
-        android:id="@+id/button32"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:text="Move Ahead to Services" />
+        <Button
+            android:id="@+id/button18"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:text="SUBMIT"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:backgroundTint="@color/accent_cyan"
+            app:cornerRadius="30dp" />
 
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="logout"
-        app:backgroundTint="@color/red" />
+        <Button
+            android:id="@+id/button32"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:text="EXPLORE SERVICES"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:backgroundTint="@color/dark_surface"
+            app:strokeColor="@color/accent_cyan"
+            app:strokeWidth="2dp"
+            app:cornerRadius="30dp" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:text="LOGOUT"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:backgroundTint="@color/red"
+            app:cornerRadius="30dp" />
+
+    </LinearLayout>
+</ScrollView>
