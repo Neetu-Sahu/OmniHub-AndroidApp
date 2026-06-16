@@ -8,13 +8,12 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Nineteenth extends AppCompatActivity {
 
-    private TextView tvDisplay;
+    private TextView tvDisplay, tvHistory;
     private double lastValue = 0;
     private char lastOperator = ' ';
     private boolean isNewOp = true;
@@ -25,12 +24,12 @@ public class Nineteenth extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_nineteenth);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            WindowInsetsCompat.Type.systemBars();
             return insets;
         });
 
-        tvDisplay = findViewById(R.id.tvDisplay);
+        tvDisplay = findViewById(R.id.tvSciDisplay);
+        tvHistory = findViewById(R.id.tvSciHistory);
 
         int[] numberIds = {
                 R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
@@ -48,6 +47,7 @@ public class Nineteenth extends AppCompatActivity {
 
         findViewById(R.id.btnClear).setOnClickListener(v -> {
             tvDisplay.setText("0");
+            tvHistory.setText("");
             lastValue = 0;
             lastOperator = ' ';
             isNewOp = true;
@@ -85,37 +85,42 @@ public class Nineteenth extends AppCompatActivity {
     }
 
     private void setOperator(char op) {
-        if (!isNewOp) calculate();
-        try {
-            lastValue = Double.parseDouble(tvDisplay.getText().toString());
-            lastOperator = op;
-            isNewOp = true;
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Invalid number", Toast.LENGTH_SHORT).show();
+        if (!isNewOp) {
+            if (lastOperator != ' ') {
+                calculate();
+            } else {
+                lastValue = Double.parseDouble(tvDisplay.getText().toString());
+            }
         }
+        lastOperator = op;
+        tvHistory.setText(lastValue + " " + op);
+        isNewOp = true;
     }
 
     private void calculate() {
         if (lastOperator == ' ') return;
         try {
             double currentValue = Double.parseDouble(tvDisplay.getText().toString());
+            double result = lastValue;
             switch (lastOperator) {
-                case '+': lastValue += currentValue; break;
-                case '-': lastValue -= currentValue; break;
-                case '*': lastValue *= currentValue; break;
+                case '+': result += currentValue; break;
+                case '-': result -= currentValue; break;
+                case '*': result *= currentValue; break;
                 case '/':
                     if (currentValue == 0) {
                         Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    lastValue /= currentValue;
+                    result /= currentValue;
                     break;
             }
-            tvDisplay.setText(String.valueOf(lastValue));
+            tvHistory.setText(lastValue + " " + lastOperator + " " + currentValue + " =");
+            tvDisplay.setText(String.valueOf(result));
+            lastValue = result;
             lastOperator = ' ';
             isNewOp = true;
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Invalid number", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -123,16 +128,27 @@ public class Nineteenth extends AppCompatActivity {
         try {
             double val = Double.parseDouble(tvDisplay.getText().toString());
             double res = 0;
+            String history = "";
             switch (func) {
-                case "sin": res = Math.sin(Math.toRadians(val)); break;
-                case "cos": res = Math.cos(Math.toRadians(val)); break;
-                case "tan": res = Math.tan(Math.toRadians(val)); break;
+                case "sin": 
+                    res = Math.sin(Math.toRadians(val)); 
+                    history = "sin(" + val + ")";
+                    break;
+                case "cos": 
+                    res = Math.cos(Math.toRadians(val)); 
+                    history = "cos(" + val + ")";
+                    break;
+                case "tan": 
+                    res = Math.tan(Math.toRadians(val)); 
+                    history = "tan(" + val + ")";
+                    break;
                 case "log": 
                     if (val <= 0) {
                         Toast.makeText(this, "Log must be > 0", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     res = Math.log10(val); 
+                    history = "log(" + val + ")";
                     break;
                 case "sqrt":
                     if (val < 0) {
@@ -140,13 +156,18 @@ public class Nineteenth extends AppCompatActivity {
                         return;
                     }
                     res = Math.sqrt(val); 
+                    history = "sqrt(" + val + ")";
                     break;
-                case "square": res = val * val; break;
+                case "square": 
+                    res = val * val; 
+                    history = val + "²";
+                    break;
             }
+            tvHistory.setText(history);
             tvDisplay.setText(String.valueOf(res));
             isNewOp = true;
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Invalid number", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
     }
 }
