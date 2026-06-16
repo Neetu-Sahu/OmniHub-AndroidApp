@@ -23,8 +23,6 @@ public class Fifth extends AppCompatActivity {
     EditText e3,e4;
     TextView t2;
     Button b11,b12;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
