@@ -3,21 +3,20 @@ package com.example.loginregister;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Eighteenth extends AppCompatActivity {
 
-    EditText et1, et2;
-    Button bPlus, bMinus, bMul, bDiv, bBack;
-    TextView tvResult;
+    TextView tvDisplay, tvHistory;
+    double lastValue = 0;
+    char lastOperator = ' ';
+    boolean isNewOp = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,57 +24,96 @@ public class Eighteenth extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_eighteenth);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            WindowInsetsCompat.Type.systemBars();
             return insets;
         });
 
-        et1 = findViewById(R.id.etNum1);
-        et2 = findViewById(R.id.etNum2);
-        bPlus = findViewById(R.id.btnPlus);
-        bMinus = findViewById(R.id.btnMinus);
-        bMul = findViewById(R.id.btnMul);
-        bDiv = findViewById(R.id.btnDiv);
-        bBack = findViewById(R.id.btnBack);
-        tvResult = findViewById(R.id.tvResult);
+        tvDisplay = findViewById(R.id.tvDisplay);
+        tvHistory = findViewById(R.id.tvHistory);
 
-        bPlus.setOnClickListener(v -> calculate('+'));
-        bMinus.setOnClickListener(v -> calculate('-'));
-        bMul.setOnClickListener(v -> calculate('*'));
-        bDiv.setOnClickListener(v -> calculate('/'));
+        int[] numberIds = {
+                R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
+                R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9
+        };
 
-        bBack.setOnClickListener(v -> {
+        for (int id : numberIds) {
+            findViewById(id).setOnClickListener(v -> {
+                Button b = (Button) v;
+                appendNumber(b.getText().toString());
+            });
+        }
+
+        findViewById(R.id.btnDot).setOnClickListener(v -> appendNumber("."));
+
+        findViewById(R.id.btnClear).setOnClickListener(v -> {
+            tvDisplay.setText("0");
+            tvHistory.setText("");
+            lastValue = 0;
+            lastOperator = ' ';
+            isNewOp = true;
+        });
+
+        findViewById(R.id.btnPlus).setOnClickListener(v -> setOperator('+'));
+        findViewById(R.id.btnMinus).setOnClickListener(v -> setOperator('-'));
+        findViewById(R.id.btnMul).setOnClickListener(v -> setOperator('*'));
+        findViewById(R.id.btnDiv).setOnClickListener(v -> setOperator('/'));
+
+        findViewById(R.id.btnEqual).setOnClickListener(v -> calculate());
+
+        findViewById(R.id.btnBack).setOnClickListener(v -> {
             Intent intent = new Intent(Eighteenth.this, Fifteenth.class);
             startActivity(intent);
             finish();
         });
     }
 
-    private void calculate(char op) {
-        String s1 = et1.getText().toString();
-        String s2 = et2.getText().toString();
-
-        if (s1.isEmpty() || s2.isEmpty()) {
-            Toast.makeText(this, "Please enter both numbers", Toast.LENGTH_SHORT).show();
-            return;
+    private void appendNumber(String num) {
+        if (isNewOp) {
+            tvDisplay.setText("");
+            isNewOp = false;
         }
+        String current = tvDisplay.getText().toString();
+        if (num.equals(".") && current.contains(".")) return;
+        tvDisplay.append(num);
+    }
 
-        double n1 = Double.parseDouble(s1);
-        double n2 = Double.parseDouble(s2);
-        double res = 0;
-
-        switch (op) {
-            case '+': res = n1 + n2; break;
-            case '-': res = n1 - n2; break;
-            case '*': res = n1 * n2; break;
-            case '/':
-                if (n2 == 0) {
-                    Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                res = n1 / n2;
-                break;
+    private void setOperator(char op) {
+        if (!isNewOp) {
+            if (lastOperator != ' ') {
+                calculate();
+            } else {
+                lastValue = Double.parseDouble(tvDisplay.getText().toString());
+            }
         }
-        tvResult.setText("Result: " + res);
+        lastOperator = op;
+        tvHistory.setText(lastValue + " " + op);
+        isNewOp = true;
+    }
+
+    private void calculate() {
+        if (lastOperator == ' ') return;
+        try {
+            double currentValue = Double.parseDouble(tvDisplay.getText().toString());
+            double result = lastValue;
+            switch (lastOperator) {
+                case '+': result += currentValue; break;
+                case '-': result -= currentValue; break;
+                case '*': result *= currentValue; break;
+                case '/':
+                    if (currentValue == 0) {
+                        Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    result /= currentValue;
+                    break;
+            }
+            tvHistory.setText(lastValue + " " + lastOperator + " " + currentValue + " =");
+            tvDisplay.setText(String.valueOf(result));
+            lastValue = result;
+            lastOperator = ' ';
+            isNewOp = true;
+        } catch (Exception e) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }
     }
 }
