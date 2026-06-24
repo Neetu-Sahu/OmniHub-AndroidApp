@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:background="@color/splash_bg"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".Question2">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="QUESTION 2"
+        android:textColor="@color/accent_cyan"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
         android:id="@+id/textViewQuestion2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="Which planet is known as the Red Planet?"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         android:textStyle="bold|italic" />
 
     <RadioGroup
@@ -25,42 +37,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:paddingStart="40dp">
+        android:background="#1AFFFFFF"
+        android:padding="20dp">
 
         <RadioButton
             android:id="@+id/rb2_1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mars"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:buttonTint="@color/accent_cyan" />
 
         <RadioButton
             android:id="@+id/rb2_2"
-            android:layout_width="wrap_content"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Venus"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:buttonTint="@color/accent_cyan" />
 
         <RadioButton
             android:id="@+id/rb2_3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jupiter"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:buttonTint="@color/accent_cyan" />
 
         <RadioButton
             android:id="@+id/rb2_4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Saturn"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:buttonTint="@color/accent_cyan" />
     </RadioGroup>
 
     <Button
         android:id="@+id/button52"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="Next Question"
-        android:textStyle="bold|italic" />
+        android:text="NEXT QUESTION"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:backgroundTint="@color/accent_cyan"
+        app:cornerRadius="30dp" />
 
 </LinearLayout>
