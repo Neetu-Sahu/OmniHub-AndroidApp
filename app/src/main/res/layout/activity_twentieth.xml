@@ -5,19 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/splash_bg"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".Twentieth">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="MAKE A CALL"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold|italic" />
+
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/custom_progress_bar"
+        android:backgroundTint="#1AFFFFFF"
+        android:ems="10"
         android:hint="Enter Phone Number"
         android:inputType="phone"
-        android:minHeight="48dp" />
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/text_secondary" />
 
     <Button
         android:id="@+id/buttonCall"
@@ -25,16 +41,21 @@
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
         android:text="CALL"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:backgroundTint="@color/accent_cyan"
+        app:cornerRadius="30dp" />
 
     <Button
         android:id="@+id/buttonBack20"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:text="Back"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
-        app:backgroundTint="@color/red" />
+        app:backgroundTint="@color/red"
+        app:cornerRadius="30dp" />
 
 </LinearLayout>
