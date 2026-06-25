@@ -10,6 +10,8 @@
 
 > **OmniHub** combines multiple useful utilities into one seamless platform, helping users perform everyday tasks efficiently without switching between different applications.
 
+<div align="center">
+
 ```text
 ┌─────────────────────────────┐
 │ 🎯 One Application          │
@@ -17,8 +19,7 @@
 │ 📱 Smooth User Experience   │
 │ 🔒 Secure & Reliable        │
 └─────────────────────────────┘
-```
-
+</div> ```
 ---
 
 # ✨ Features
