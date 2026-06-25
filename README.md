@@ -1,64 +1,252 @@
-# 📱 OmniHub: All-in-One Utility Companion
+# 🌟 Overview
 
-OmniHub is a feature-rich, high-performance Android utility application built using **Android Studio**. Designed to be the ultimate digital Swiss Army knife, it seamlessly consolidates essential device controls, real-time cloud data management, built-in entertainment modules, and productivity tools into a single, intuitive dashboard. 
+<div align="center">
 
----
+### 🚀 OmniHub — Your All-in-One Utility Companion
 
-## 🚀 Features
+*Simplifying everyday digital experiences through a single powerful Android application.*
 
-### 🔐 Multi-Tier Authentication
-* **Online Mode:** Cloud-powered registration and secure user authentication synced in real time via **Firebase Authentication**.
-* **Offline Mode:** Fully functional, localized account management backed by an **SQLite Database** for absolute privacy and offline access.
+</div>
 
-### 🔄 Real-Time Database Entry
-* Dynamic data synchronization built with **Firebase Realtime Database**.
-* Instantly saves, updates, and fetches user information across multiple active devices with zero latency.
+> **OmniHub** combines multiple useful utilities into one seamless platform, helping users perform everyday tasks efficiently without switching between different applications.
 
-### 🛠️ Mobile Services Hub (Hardware Controls)
-Take direct command of core device hardware features smoothly from within the app:
-* **Connectivity:** Seamlessly toggle Wi-Fi and Bluetooth states.
-* **Hardware Utilities:** Instant controls for the camera Torch/Flashlight and device Vibrator haptics.
-* **Communication:** Quick-access direct calling via an integrated dialer interface.
-* **Proximity Sensing:** Real-time gesture detection and visual UI responses triggered by the device’s physical proximity sensor.
-
-### 🎭 Application Services Hub (Entertainment & Productivity)
-* **Calculator Hub:** Dual-mode processing supporting both standard everyday arithmetic and an advanced Scientific Calculator (logarithmic, trigonometric functions).
-* **Media Suite:** Native, fully integrated HTML5/ExoPlayer-backed Music and Video Players with streamlined media playback controls.
-* **External Web Browser:** A built-in web viewer allowing you to browse the internet securely without ever leaving the application.
-* **Interactive Quiz Module:** A General Knowledge trivia challenge featuring dynamic scoring ($+1$ for correct answers, $-1$ for wrong answers) and native Text-to-Speech (TTS) voice integration for interactive result announcements.
+```text
+┌─────────────────────────────┐
+│ 🎯 One Application          │
+│ ⚡ Multiple Utilities       │
+│ 📱 Smooth User Experience   │
+│ 🔒 Secure & Reliable        │
+└─────────────────────────────┘
+```
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+# ✨ Features
 
-* **IDE:** Android Studio
-* **Language:** Java / Kotlin
-* **Database (Cloud):** Firebase Realtime Database
-* **Database (Local):** SQLite
-* **Authentication:** Firebase Auth
-* **UI Layouts:** XML (Material Design Components)
+<div align="center">
+
+| 🔐 Authentication           | 🎨 Modern UI               |
+| --------------------------- | -------------------------- |
+| Secure Login & Registration | Material Design Components |
+| Firebase Authentication     | Responsive Layouts         |
+| User Session Management     | Smooth Navigation          |
+
+| ☁️ Cloud Integration       | 🚀 Performance            |
+| -------------------------- | ------------------------- |
+| Firebase Realtime Database | Fast Loading Screens      |
+| Real-Time Data Updates     | Optimized User Experience |
+| Efficient Data Management  | Lightweight Architecture  |
+
+</div>
 
 ---
 
-## 📸 Screenshots & Demo
+# 🛠️ Tech Stack
 
-| Splash & Authentication | Hardware & Database Services | Entertainment & Media |
-| :---: | :---: | :---: |
-| _[Insert Splash/Login Screenshot Here]_ | _[Insert Services Hub Screenshot Here]_ | _[Insert Quiz/Media Player Screenshot Here]_ |
+<div align="center">
+
+| Category                | Technology                 |
+| ----------------------- | -------------------------- |
+| 💻 Programming Language | Java                       |
+| 🎨 UI Design            | XML                        |
+| 📱 Development IDE      | Android Studio             |
+| ☁️ Backend Services     | Firebase                   |
+| 🔐 Authentication       | Firebase Authentication    |
+| 🗄️ Database            | Firebase Realtime Database |
+| 🎯 UI Components        | Material Design            |
+
+</div>
+
+<br>
+
+<div align="center">
+
+```text
+Android Studio
+       │
+       ▼
+      Java
+       │
+       ▼
+    Firebase
+       │
+       ▼
+  Material Design
+```
+
+</div>
 
 ---
 
-## 🏗️ Getting Started
+# ⚙️ Installation
 
-Follow these steps to set up and run the project locally on your machine.
+## 📥 Clone Repository
 
-### Prerequisites
-* Android Studio (Ladybug or newer recommended)
-* Android SDK Platform 33+
-* A Firebase Project configuration file (`google-services.json`)
+```bash
+git clone https://github.com/your-username/OmniHub.git
+```
 
-### Installation & Setup
+## 🔧 Open Project
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/OmniHub.git](https://github.com/YOUR_USERNAME/OmniHub.git)
+```text
+1️⃣ Launch Android Studio
+
+2️⃣ Select "Open Existing Project"
+
+3️⃣ Choose the OmniHub Project Folder
+
+4️⃣ Sync Gradle Dependencies
+
+5️⃣ Connect Device / Start Emulator
+
+6️⃣ Run the Application
+```
+
+## ▶️ Launch
+
+```bash
+Run ▶ app
+```
+
+✅ Your application is now ready to use.
+
+---
+
+# 🔥 Firebase Setup
+
+<details>
+
+<summary><b>📌 Click Here to View Complete Firebase Setup</b></summary>
+
+<br>
+
+### Step 1 — Create Firebase Project
+
+Create a new project from the Firebase Console.
+
+### Step 2 — Enable Authentication
+
+```text
+Firebase Console
+│
+└── Authentication
+    └── Sign-in Method
+        └── Email / Password
+```
+
+### Step 3 — Enable Realtime Database
+
+```text
+Firebase Console
+│
+└── Realtime Database
+    └── Create Database
+```
+
+### Step 4 — Download Configuration File
+
+```text
+google-services.json
+```
+
+### Step 5 — Place File Inside App Module
+
+```text
+OmniHub/
+│
+└── app/
+    └── google-services.json
+```
+
+### Step 6 — Sync & Run
+
+```text
+Gradle Sync
+     │
+     ▼
+ Build Project
+     │
+     ▼
+   Run App
+```
+
+✅ Firebase Successfully Connected
+
+</details>
+
+---
+
+# 🚀 Key Highlights
+
+<div align="center">
+
+| 🌟 Highlight            | 💡 Benefit                  |
+| ----------------------- | --------------------------- |
+| Modern User Interface   | Clean & Professional Design |
+| Firebase Integration    | Reliable Cloud Services     |
+| Real-Time Updates       | Instant Synchronization     |
+| Scalable Architecture   | Easy Future Expansion       |
+| Secure Authentication   | Enhanced User Security      |
+| Lightweight Application | Smooth Performance          |
+
+</div>
+
+<br>
+
+```text
+⚡ Fast
+🔒 Secure
+☁️ Cloud Powered
+📱 User Friendly
+🚀 Scalable
+```
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome and appreciated.
+
+```text
+🍴 Fork Repository
+        │
+        ▼
+🌿 Create New Branch
+        │
+        ▼
+💻 Make Changes
+        │
+        ▼
+📝 Commit Updates
+        │
+        ▼
+📤 Push Changes
+        │
+        ▼
+🔄 Create Pull Request
+```
+
+Every contribution helps improve OmniHub and makes it better for everyone.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider supporting it:
+
+```text
+⭐ Star the Repository
+🍴 Fork the Project
+📢 Share with Friends
+🤝 Contribute New Features
+```
+
+<div align="center">
+
+## 💙 Show Your Support
+
+### Give this project a ⭐ on GitHub
+
+**Thank you for visiting OmniHub! 🚀**
+
+</div>
