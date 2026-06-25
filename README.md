@@ -12,7 +12,7 @@
 
 # 🌟 Overview
 
-> **OmniHub** combines multiple useful utilities into one seamless platform, helping users perform everyday tasks efficiently without switching between different applications.
+> **OmniHub** combines multiple useful utilities into a single seamless platform, helping users perform everyday tasks efficiently without switching between different applications.
 
 ```text
 ┌─────────────────────────────┐
