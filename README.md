@@ -83,7 +83,7 @@ Android Studio
 ## 📥 Clone Repository
 
 ```bash
-git clone https://github.com/Neetu-Sahu/OmniHub-AndroidApp.git
+git clone [https://github.com/Neetu-Sahu/OmniHub-AndroidApp.git](https://github.com/Neetu-Sahu/OmniHub-AndroidApp.git)
 ```
 
 ## 🔧 Open Project
