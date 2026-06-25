@@ -28,3 +28,37 @@ Take direct command of core device hardware features smoothly from within the ap
 * **Interactive Quiz Module:** A General Knowledge trivia challenge featuring dynamic scoring ($+1$ for correct answers, $-1$ for wrong answers) and native Text-to-Speech (TTS) voice integration for interactive result announcements.
 
 ---
+
+## 🛠️ Tech Stack & Architecture
+
+* **IDE:** Android Studio
+* **Language:** Java / Kotlin
+* **Database (Cloud):** Firebase Realtime Database
+* **Database (Local):** SQLite
+* **Authentication:** Firebase Auth
+* **UI Layouts:** XML (Material Design Components)
+
+---
+
+## 📸 Screenshots & Demo
+
+| Splash & Authentication | Hardware & Database Services | Entertainment & Media |
+| :---: | :---: | :---: |
+| _[Insert Splash/Login Screenshot Here]_ | _[Insert Services Hub Screenshot Here]_ | _[Insert Quiz/Media Player Screenshot Here]_ |
+
+---
+
+## 🏗️ Getting Started
+
+Follow these steps to set up and run the project locally on your machine.
+
+### Prerequisites
+* Android Studio (Ladybug or newer recommended)
+* Android SDK Platform 33+
+* A Firebase Project configuration file (`google-services.json`)
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/OmniHub.git](https://github.com/YOUR_USERNAME/OmniHub.git)
