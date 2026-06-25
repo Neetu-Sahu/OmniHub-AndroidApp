@@ -1,28 +1,22 @@
-# 🌟 Overview
+🌟 Overview
 
 <div align="center">
 
-### 🚀 OmniHub — Your All-in-One Utility Companion
+🚀 OmniHub — Your All-in-One Utility Companion
 
-*Simplifying everyday digital experiences through a single powerful Android application.*
-
-</div>
-
-> **OmniHub** combines multiple useful utilities into one seamless platform, helping users perform everyday tasks efficiently without switching between different applications.
-
-<br>
-
-<div align="center">
-
-| 🎯 One Application | ⚡ Multiple Utilities |
-|-------------------|----------------------|
-| 📱 Smooth User Experience | 🔒 Secure & Reliable |
+Simplifying everyday digital experiences through a single powerful Android application.
 
 </div>
 
----
+OmniHub combines multiple useful utilities into one seamless platform, helping users perform everyday tasks efficiently without switching between different applications.
 
-# ✨ Features
+┌─────────────────────────────┐
+│ 🎯 One Application          │
+│ ⚡ Multiple Utilities       │
+│ 📱 Smooth User Experience   │
+│ 🔒 Secure & Reliable        │
+└─────────────────────────────┘
+✨ Features
 
 <div align="center">
 
